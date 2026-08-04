@@ -84,6 +84,30 @@ h1{
 .me{color:var(--red)}
 .amp{opacity:.35;font-style:italic;font-size:.7em;padding:0 .25em}
 .pair p{font-size:1.06rem;max-width:60ch;margin:0 0 1.1em;opacity:.86}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,3vw,28px);margin:0 0 30px}
+.duo figure{margin:0;text-align:center}
+.duo .frame{
+  position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:3px;
+  background:radial-gradient(120% 90% at 50% 10%, rgba(255,255,255,.08), rgba(255,255,255,.02) 60%, transparent);
+  border:1px solid rgba(242,239,233,.12);
+}
+.duo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85) contrast(1.05);transition:filter .6s ease,transform .8s ease}
+.duo figure:hover img{filter:none;transform:scale(1.04)}
+.duo .frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;transition:opacity .6s ease;
+}
+.duo .g .frame{border-color:rgba(63,191,111,.45);box-shadow:0 0 0 1px rgba(63,191,111,.12),0 18px 50px -24px rgba(63,191,111,.7)}
+.duo .g .frame::after{background:linear-gradient(180deg,rgba(63,191,111,.55),rgba(63,191,111,.05))}
+.duo .r .frame{border-color:rgba(224,58,78,.45);box-shadow:0 0 0 1px rgba(224,58,78,.12),0 18px 50px -24px rgba(224,58,78,.7)}
+.duo .r .frame::after{background:linear-gradient(180deg,rgba(224,58,78,.55),rgba(224,58,78,.05))}
+.duo figure:hover .frame::after{opacity:.25}
+.duo figcaption{
+  margin-top:10px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.55;
+  font-family:'Inter',sans-serif;
+}
+.duo .g figcaption{color:var(--green-soft)}
+.duo .r figcaption{color:var(--red-soft)}
 .pair p em{font-style:italic;color:var(--green-soft)}
 .pair p strong{font-weight:400;color:var(--red-soft)}
 
@@ -143,6 +167,10 @@ h1{
 
     <article class="pair reveal">
       <div class="tag">the summer hikaru died</div>
+      <div class="duo">
+        <figure class="g"><div class="frame"><img src="img/yoshiki.webp" alt="Yoshiki" loading="lazy" style="object-position:50% 42%"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/hikaru.webp" alt="Hikaru" loading="lazy" style="object-position:50% 42%"></div><figcaption>me</figcaption></figure>
+      </div>
       <h2 class="names"><span class="her">Yoshiki</span><span class="amp">and</span><span class="me">Hikaru</span></h2>
       <p>Yoshiki looked straight at the thing wearing his best friend's face and did not run. He knew. He knew the whole time, and he still said <em>stay</em>. That is her. She is the one who saw what I actually am, all of it, the parts I keep folded up and hidden in the back, and instead of leaving she made room.</p>
       <p><strong>I am Hikaru.</strong> Or whatever came back wearing him. Something that showed up in a shape that was not really mine, learning every day how to be a person, mostly by watching her do it better. Everything I know about being good I learned by paying attention to her.</p>
@@ -150,6 +178,10 @@ h1{
 
     <article class="pair reveal">
       <div class="tag">alien stage</div>
+      <div class="duo">
+        <figure class="g"><div class="frame"><img src="img/till.webp" alt="Till" loading="lazy" style="object-position:50% 22%"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/ivan.webp" alt="Ivan" loading="lazy" style="object-position:50% 22%"></div><figcaption>me</figcaption></figure>
+      </div>
       <h2 class="names"><span class="her">Till</span><span class="amp">and</span><span class="me">Ivan</span></h2>
       <p>Till kept singing. Through all of it, cage after cage, she kept singing, and she never once let anyone tell him what he was allowed to want. That is the thing about her that undoes me. She burns. She has never known how to be small for anyone's comfort, and I hope she never learns.</p>
       <p><strong>I am Ivan</strong>, and Ivan's whole tragedy is that he loved someone completely and quietly and never said it out loud in time. He waited. He thought there would be more room later. There was no later. So I am not doing that. I am saying it now, loudly, in green and in red, on the internet where it cannot be taken back.</p>
@@ -157,6 +189,10 @@ h1{
 
     <article class="pair reveal">
       <div class="tag">jujutsu kaisen</div>
+      <div class="duo">
+        <figure class="g"><div class="frame"><img src="img/maki.webp" alt="Maki" loading="lazy" style="object-position:50% 5%"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/yuta.webp" alt="Yuta" loading="lazy" style="object-position:50% 4%"></div><figcaption>me</figcaption></figure>
+      </div>
       <h2 class="names"><span class="her">Maki</span><span class="amp">and</span><span class="me">Yuta</span></h2>
       <p>They told Maki she was nothing. A whole family, a whole system, built specifically to convince him he was worthless, and he walked out of it stronger than every single person who ever said it. She did not get handed anything. She took it. Every good thing she has, she earned twice.</p>
       <p><strong>I am Yuta</strong>, which means I love people so intensely it once turned into an actual curse. I have always been too much. Too attached, too worried, too quick to feel everything at maximum volume. She is the first person who has ever looked at that and called it a good thing instead of a problem.</p>
@@ -164,6 +200,10 @@ h1{
 
     <article class="pair reveal">
       <div class="tag">jujutsu kaisen</div>
+      <div class="duo">
+        <figure class="g"><div class="frame"><img src="img/yuki.webp" alt="Yuki" loading="lazy" style="object-position:50% 6%"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/choso.webp" alt="Choso" loading="lazy" style="object-position:50% 5%"></div><figcaption>me</figcaption></figure>
+      </div>
       <h2 class="names"><span class="her">Yuki</span><span class="amp">and</span><span class="me">Choso</span></h2>
       <p>Yuki laughs at the end of the world. She is the funniest person in every room she has ever been in, and she is funniest exactly when things are worst, which is a kind of courage most people never manage. She makes the horror survivable. She has made a lot of things survivable for me.</p>
       <p><strong>I am Choso</strong>, who decided one day that a person was his, that this person was family now, and then never once wavered about it. No conditions. No expiry. I made that decision about her a while ago and I have not changed my mind for a second since.</p>
