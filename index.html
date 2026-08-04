@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#3fbf6f;
+  --green-soft:#8fe0ab;
+  --red:#e03a4e;
+  --red-soft:#ff8b96;
+  --ink:#f2efe9;
+  --bg:#07090b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;font-weight:300;
+  line-height:1.85;letter-spacing:.01em;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(70vw 70vh at 8% 12%, rgba(63,191,111,.20), transparent 65%),
+    radial-gradient(70vw 70vh at 92% 88%, rgba(224,58,78,.20), transparent 65%),
+    radial-gradient(60vw 60vh at 50% 50%, rgba(63,191,111,.06), transparent 70%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:3px 3px;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px}
+
+/* gate */
+#gate{
+  position:fixed;inset:0;z-index:50;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:22px;text-align:center;transition:opacity .9s ease;
+}
+#gate .heart{font-size:3.4rem;color:var(--red);animation:beat 1.9s ease-in-out infinite}
+#gate p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;opacity:.75;margin:0}
+#gate form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+input,button{font-family:inherit;font-size:1rem}
+input{
+  background:transparent;border:1px solid rgba(242,239,233,.25);color:var(--ink);
+  padding:12px 16px;border-radius:2px;outline:none;text-align:center;min-width:220px;
+}
+input:focus{border-color:var(--green)}
+button{
+  background:transparent;border:1px solid var(--green);color:var(--green-soft);
+  padding:12px 24px;border-radius:2px;cursor:pointer;transition:.35s;
+}
+button:hover{background:var(--green);color:#04140a}
+#err{color:var(--red-soft);font-size:.9rem;min-height:1.2em;opacity:0;transition:.3s}
+
+/* content */
+main{opacity:0;transition:opacity 1.6s ease}
+main.on{opacity:1}
+section{padding:14vh 0;position:relative}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px}
+.hero .glyph{font-size:4rem;line-height:1;background:linear-gradient(100deg,var(--green),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent;animation:beat 2.6s ease-in-out infinite}
+h1{
+  font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;
+  font-size:clamp(3rem,13vw,7rem);margin:0;letter-spacing:.02em;
+  background:linear-gradient(96deg,var(--green-soft) 0%,var(--green) 38%,var(--red) 68%,var(--red-soft) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.sub{font-family:'Cormorant Garamond',serif;font-size:1.3rem;opacity:.7;max-width:34ch;margin:0}
+.scroll{position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;opacity:.35;animation:float 2.6s ease-in-out infinite}
+
+.rule{height:1px;border:0;margin:0 auto;max-width:760px;background:linear-gradient(90deg,transparent,var(--green),var(--red),transparent);opacity:.5}
+
+.pair{margin:0 auto 12vh;max-width:760px}
+.pair:last-child{margin-bottom:0}
+.tag{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;opacity:.4;margin-bottom:18px}
+.names{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,7vw,3.2rem);line-height:1.15;margin:0 0 22px}
+.her{color:var(--green)}
+.me{color:var(--red)}
+.amp{opacity:.35;font-style:italic;font-size:.7em;padding:0 .25em}
+.pair p{font-size:1.06rem;max-width:60ch;margin:0 0 1.1em;opacity:.86}
+.pair p em{font-style:italic;color:var(--green-soft)}
+.pair p strong{font-weight:400;color:var(--red-soft)}
+
+.poem{text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,4vw,1.9rem);line-height:2.1;font-style:italic;opacity:.9}
+.poem span{display:block}
+.poem .g{color:var(--green-soft)}
+.poem .r{color:var(--red-soft)}
+
+.ask{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:34px}
+.ask h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.1rem,7.5vw,4rem);margin:0;line-height:1.25;max-width:16ch}
+.buttons{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;min-height:60px}
+#yes{border-color:var(--green);color:var(--green-soft);font-size:1.15rem;padding:16px 44px}
+#yes:hover{background:var(--green);color:#04140a;box-shadow:0 0 40px rgba(63,191,111,.45)}
+#no{border-color:rgba(224,58,78,.5);color:var(--red-soft);position:relative;transition:transform .22s ease,opacity .22s ease,background .3s}
+#no:hover{background:transparent;color:var(--red-soft)}
+#answer{display:none;flex-direction:column;gap:16px;align-items:center}
+#answer.on{display:flex;animation:rise 1.1s ease both}
+#answer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(2rem,8vw,3.4rem);background:linear-gradient(96deg,var(--green),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+#answer p{max-width:38ch;opacity:.8;margin:0}
+.sig{text-align:center;padding:10vh 0 14vh;font-family:'Cormorant Garamond',serif;font-style:italic;opacity:.55;font-size:1.1rem}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s ease,transform 1.1s ease}
+.reveal.seen{opacity:1;transform:none}
+
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.16)}28%{transform:scale(1)}42%{transform:scale(1.1)}}
+@keyframes float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,9px)}}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fall{to{transform:translateY(105vh) rotate(var(--spin));opacity:0}}
+.petal{position:fixed;top:-6vh;z-index:40;pointer-events:none;font-size:1.2rem;animation:fall linear forwards}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="heart">♡</div>
+  <p>for Monika, and nobody else</p>
+  <form id="gateForm" autocomplete="off">
+    <input id="pw" type="password" placeholder="what did I research for you?" aria-label="password">
+    <button type="submit">enter</button>
+  </form>
+  <div id="err">not quite. try again.</div>
+</div>
+
+<main id="main">
+
+  <section class="hero wrap">
+    <div class="glyph">♡</div>
+    <h1>Monika</h1>
+    <p class="sub">I built you a page once before. This one has a question at the end of it.</p>
+    <div class="scroll">scroll</div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="wrap">
+
+    <article class="pair reveal">
+      <div class="tag">the summer hikaru died</div>
+      <h2 class="names"><span class="her">Yoshiki</span><span class="amp">and</span><span class="me">Hikaru</span></h2>
+      <p>Yoshiki looked straight at the thing wearing his best friend's face and did not run. He knew. He knew the whole time, and he still said <em>stay</em>. That is her. She is the one who saw what I actually am, all of it, the parts I keep folded up and hidden in the back, and instead of leaving she made room.</p>
+      <p><strong>I am Hikaru.</strong> Or whatever came back wearing him. Something that showed up in a shape that was not really mine, learning every day how to be a person, mostly by watching her do it better. Everything I know about being good I learned by paying attention to her.</p>
+    </article>
+
+    <article class="pair reveal">
+      <div class="tag">alien stage</div>
+      <h2 class="names"><span class="her">Till</span><span class="amp">and</span><span class="me">Ivan</span></h2>
+      <p>Till kept singing. Through all of it, cage after cage, she kept singing, and she never once let anyone tell him what he was allowed to want. That is the thing about her that undoes me. She burns. She has never known how to be small for anyone's comfort, and I hope she never learns.</p>
+      <p><strong>I am Ivan</strong>, and Ivan's whole tragedy is that he loved someone completely and quietly and never said it out loud in time. He waited. He thought there would be more room later. There was no later. So I am not doing that. I am saying it now, loudly, in green and in red, on the internet where it cannot be taken back.</p>
+    </article>
+
+    <article class="pair reveal">
+      <div class="tag">jujutsu kaisen</div>
+      <h2 class="names"><span class="her">Maki</span><span class="amp">and</span><span class="me">Yuta</span></h2>
+      <p>They told Maki she was nothing. A whole family, a whole system, built specifically to convince him he was worthless, and he walked out of it stronger than every single person who ever said it. She did not get handed anything. She took it. Every good thing she has, she earned twice.</p>
+      <p><strong>I am Yuta</strong>, which means I love people so intensely it once turned into an actual curse. I have always been too much. Too attached, too worried, too quick to feel everything at maximum volume. She is the first person who has ever looked at that and called it a good thing instead of a problem.</p>
+    </article>
+
+    <article class="pair reveal">
+      <div class="tag">jujutsu kaisen</div>
+      <h2 class="names"><span class="her">Yuki</span><span class="amp">and</span><span class="me">Choso</span></h2>
+      <p>Yuki laughs at the end of the world. She is the funniest person in every room she has ever been in, and she is funniest exactly when things are worst, which is a kind of courage most people never manage. She makes the horror survivable. She has made a lot of things survivable for me.</p>
+      <p><strong>I am Choso</strong>, who decided one day that a person was his, that this person was family now, and then never once wavered about it. No conditions. No expiry. I made that decision about her a while ago and I have not changed my mind for a second since.</p>
+    </article>
+
+  </section>
+
+  <hr class="rule">
+
+  <section class="wrap poem reveal">
+    <span class="g">You are green.</span>
+    <span class="g">Not the soft kind. The kind that cracks concrete,</span>
+    <span class="g">the kind that grows back after the fire,</span>
+    <span class="g">the kind nobody gave permission to.</span>
+    <span style="opacity:.3">·</span>
+    <span class="r">I am red.</span>
+    <span class="r">Loud, a little too much, always the first to bleed,</span>
+    <span class="r">a heart that shows up in every single thing I make,</span>
+    <span class="r">including this.</span>
+    <span style="opacity:.3">·</span>
+    <span>Green and red sit opposite each other on the wheel,</span>
+    <span>which is a fancy way of saying</span>
+    <span>we make each other louder.</span>
+  </section>
+
+  <hr class="rule">
+
+  <section class="ask wrap">
+    <h2 class="reveal">Monika, will you be my girlfriend?</h2>
+    <div class="buttons" id="buttons">
+      <button id="yes" type="button">yes</button>
+      <button id="no" type="button">no</button>
+    </div>
+    <div id="answer">
+      <div class="big">forever &amp; always</div>
+      <p>You just made my entire year. Now come here.</p>
+    </div>
+  </section>
+
+  <div class="sig">made with green, red, and every ounce of nerve I had ♡</div>
+
+</main>
+
+<script>
+// change this to whatever answer only she would know
+const PASSWORD = "orchids";
+
+const gate = document.getElementById('gate');
+const main = document.getElementById('main');
+const err  = document.getElementById('err');
+
+document.getElementById('gateForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const val = document.getElementById('pw').value.trim().toLowerCase();
+  if (val === PASSWORD) {
+    gate.style.opacity = 0;
+    setTimeout(() => { gate.remove(); main.classList.add('on'); }, 900);
+  } else {
+    err.style.opacity = 1;
+    document.getElementById('pw').value = '';
+  }
+});
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('seen'); });
+}, { threshold: .18 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// the no button does not want to be caught
+const no = document.getElementById('no');
+let dodges = 0;
+const dodge = () => {
+  dodges++;
+  if (dodges > 6) { no.style.opacity = 0; no.style.pointerEvents = 'none'; return; }
+  const x = (Math.random() - .5) * 260;
+  const y = (Math.random() - .5) * 160;
+  no.style.transform = `translate(${x}px, ${y}px) scale(${Math.max(.4, 1 - dodges * .1)})`;
+};
+no.addEventListener('mouseenter', dodge);
+no.addEventListener('click', dodge);
+
+document.getElementById('yes').addEventListener('click', () => {
+  document.getElementById('buttons').style.display = 'none';
+  document.getElementById('answer').classList.add('on');
+  rain();
+});
+
+function rain() {
+  const marks = ['♡', '❀', '♥', '✿', '♡'];
+  for (let i = 0; i < 90; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = marks[i % marks.length];
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.color = Math.random() < .5 ? 'var(--green)' : 'var(--red)';
+    p.style.fontSize = (0.8 + Math.random() * 1.4) + 'rem';
+    p.style.setProperty('--spin', (Math.random() * 720 - 360) + 'deg');
+    p.style.animationDuration = (3.5 + Math.random() * 4) + 's';
+    p.style.animationDelay = (Math.random() * 3) + 's';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 11000);
+  }
+}
+</script>
+</body>
+</html>
