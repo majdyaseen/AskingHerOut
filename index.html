@@ -92,7 +92,8 @@ h1{
   background:radial-gradient(120% 90% at 50% 10%, rgba(255,255,255,.08), rgba(255,255,255,.02) 60%, transparent);
   border:1px solid rgba(242,239,233,.12);
 }
-.duo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85) contrast(1.05);transition:filter .6s ease,transform .8s ease}
+.duo img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block;padding:14px 10px 0;filter:saturate(.85) contrast(1.05);transition:filter .6s ease,transform .8s ease}
+.duo.shot img{object-fit:cover;object-position:50% 18%;padding:0}
 .duo figure:hover img{filter:none;transform:scale(1.04)}
 .duo .frame::after{
   content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;transition:opacity .6s ease;
@@ -168,8 +169,8 @@ h1{
     <article class="pair reveal">
       <div class="tag">the summer hikaru died</div>
       <div class="duo">
-        <figure class="g"><div class="frame"><img src="img/yoshiki.webp" alt="Yoshiki" loading="lazy" style="object-position:50% 42%"></div><figcaption>her</figcaption></figure>
-        <figure class="r"><div class="frame"><img src="img/hikaru.webp" alt="Hikaru" loading="lazy" style="object-position:50% 42%"></div><figcaption>me</figcaption></figure>
+        <figure class="g"><div class="frame"><img src="img/yoshiki.webp" alt="Yoshiki" loading="lazy"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/hikaru.webp" alt="Hikaru" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Yoshiki</span><span class="amp">and</span><span class="me">Hikaru</span></h2>
       <p>Yoshiki looked straight at the thing wearing his best friend's face and did not run. He knew. He knew the whole time, and he still said <em>stay</em>. That is her. She is the one who saw what I actually am, all of it, the parts I keep folded up and hidden in the back, and instead of leaving she made room.</p>
@@ -178,9 +179,9 @@ h1{
 
     <article class="pair reveal">
       <div class="tag">alien stage</div>
-      <div class="duo">
-        <figure class="g"><div class="frame"><img src="img/till.webp" alt="Till" loading="lazy" style="object-position:50% 22%"></div><figcaption>her</figcaption></figure>
-        <figure class="r"><div class="frame"><img src="img/ivan.webp" alt="Ivan" loading="lazy" style="object-position:50% 22%"></div><figcaption>me</figcaption></figure>
+      <div class="duo shot">
+        <figure class="g"><div class="frame"><img src="img/till.webp" alt="Till" loading="lazy"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/ivan.webp" alt="Ivan" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Till</span><span class="amp">and</span><span class="me">Ivan</span></h2>
       <p>Till kept singing. Through all of it, cage after cage, she kept singing, and she never once let anyone tell him what he was allowed to want. That is the thing about her that undoes me. She burns. She has never known how to be small for anyone's comfort, and I hope she never learns.</p>
@@ -190,8 +191,8 @@ h1{
     <article class="pair reveal">
       <div class="tag">jujutsu kaisen</div>
       <div class="duo">
-        <figure class="g"><div class="frame"><img src="img/maki.webp" alt="Maki" loading="lazy" style="object-position:50% 5%"></div><figcaption>her</figcaption></figure>
-        <figure class="r"><div class="frame"><img src="img/yuta.webp" alt="Yuta" loading="lazy" style="object-position:50% 4%"></div><figcaption>me</figcaption></figure>
+        <figure class="g"><div class="frame"><img src="img/maki.webp" alt="Maki" loading="lazy"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/yuta.webp" alt="Yuta" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Maki</span><span class="amp">and</span><span class="me">Yuta</span></h2>
       <p>They told Maki she was nothing. A whole family, a whole system, built specifically to convince him he was worthless, and he walked out of it stronger than every single person who ever said it. She did not get handed anything. She took it. Every good thing she has, she earned twice.</p>
@@ -201,8 +202,8 @@ h1{
     <article class="pair reveal">
       <div class="tag">jujutsu kaisen</div>
       <div class="duo">
-        <figure class="g"><div class="frame"><img src="img/yuki.webp" alt="Yuki" loading="lazy" style="object-position:50% 6%"></div><figcaption>her</figcaption></figure>
-        <figure class="r"><div class="frame"><img src="img/choso.webp" alt="Choso" loading="lazy" style="object-position:50% 5%"></div><figcaption>me</figcaption></figure>
+        <figure class="g"><div class="frame"><img src="img/yuki.webp" alt="Yuki" loading="lazy"></div><figcaption>her</figcaption></figure>
+        <figure class="r"><div class="frame"><img src="img/choso.webp" alt="Choso" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Yuki</span><span class="amp">and</span><span class="me">Choso</span></h2>
       <p>Yuki laughs at the end of the world. She is the funniest person in every room she has ever been in, and she is funniest exactly when things are worst, which is a kind of courage most people never manage. She makes the horror survivable. She has made a lot of things survivable for me.</p>
