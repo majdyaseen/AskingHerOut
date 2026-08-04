@@ -76,6 +76,25 @@ h1{
 
 .rule{height:1px;border:0;margin:0 auto;max-width:760px;background:linear-gradient(90deg,transparent,var(--green),var(--red),transparent);opacity:.5}
 
+/* orchids for her, white roses for me */
+.orchid{color:var(--green)}
+.rose{color:#f6f2ec}
+.bloom{width:1em;height:1em;display:inline-block;vertical-align:-.15em;fill:currentColor}
+.flourish{display:flex;align-items:center;justify-content:center;gap:16px;font-size:1.9rem;opacity:.9}
+.flourish .tie{font-size:.7em;opacity:.5;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--red);animation:beat 2.6s ease-in-out infinite}
+.flourish .bloom{animation:sway 6s ease-in-out infinite}
+.flourish .rose .bloom{animation-delay:-3s}
+.ornament{
+  display:flex;align-items:center;justify-content:center;gap:14px;font-size:1.35rem;
+  margin:0 auto;max-width:760px;padding:0 28px;
+}
+.ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(242,239,233,.28),transparent)}
+.ornament .bloom{animation:sway 7s ease-in-out infinite}
+.ornament .rose .bloom,.ornament .bloom.slow{animation-delay:-3.5s}
+.pair .tag{display:flex;align-items:center;gap:10px}
+.tag .bloom{font-size:1.15rem;opacity:.9}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+
 .pair{margin:0 auto 12vh;max-width:760px}
 .pair:last-child{margin-bottom:0}
 .tag{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;opacity:.4;margin-bottom:18px}
@@ -153,6 +172,30 @@ h1{
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="orchid" viewBox="0 0 100 100">
+    <g stroke="#07090b" stroke-width="2">
+      <ellipse cx="50" cy="26" rx="10" ry="21"/>
+      <ellipse cx="50" cy="26" rx="10" ry="21" transform="rotate(72 50 50)"/>
+      <ellipse cx="50" cy="26" rx="10" ry="21" transform="rotate(-72 50 50)"/>
+      <ellipse cx="50" cy="28" rx="15" ry="22" transform="rotate(143 50 50)"/>
+      <ellipse cx="50" cy="28" rx="15" ry="22" transform="rotate(-143 50 50)"/>
+      <path d="M50 46c-11 5-13 19-1 26 1 .6 1 .6 2 0 12-7 10-21-1-26z" opacity=".55"/>
+      <circle cx="50" cy="50" r="6" opacity=".8"/>
+    </g>
+  </symbol>
+  <symbol id="rose" viewBox="0 0 100 100">
+    <g stroke="#07090b" stroke-width="2">
+      <ellipse cx="50" cy="27" rx="17" ry="21"/>
+      <ellipse cx="50" cy="27" rx="17" ry="21" transform="rotate(72 50 50)"/>
+      <ellipse cx="50" cy="27" rx="17" ry="21" transform="rotate(144 50 50)"/>
+      <ellipse cx="50" cy="27" rx="17" ry="21" transform="rotate(216 50 50)"/>
+      <ellipse cx="50" cy="27" rx="17" ry="21" transform="rotate(288 50 50)"/>
+      <g fill="none" stroke="#0b0d10" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"><circle cx="50" cy="50" r="14"/><path d="M50 41a9 9 0 1 1-9 9"/><path d="M50 45.5a4.5 4.5 0 1 0 4.5 4.5"/></g>
+    </g>
+  </symbol>
+</svg>
+
 <div id="gate">
   <div class="heart">♡</div>
   <p>for Monika, and nobody else</p>
@@ -166,51 +209,51 @@ h1{
 <main id="main">
 
   <section class="hero wrap">
-    <div class="glyph">♡</div>
+    <div class="flourish"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span><span class="tie">♡</span><span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
     <h1>Monika</h1>
     <p class="sub">I built you a page once before. This one has a question at the end of it.</p>
     <div class="scroll">scroll</div>
   </section>
 
-  <hr class="rule">
+  <div class="ornament"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span><span class="tie">and</span><span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
 
   <section class="wrap">
 
     <article class="pair reveal">
-      <div class="tag">the summer hikaru died</div>
+      <div class="tag"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span>the summer hikaru died<span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
       <div class="duo">
         <figure class="g"><div class="frame"><img src="img/yoshiki.webp" alt="Yoshiki" loading="lazy"></div><figcaption>her</figcaption></figure>
         <figure class="r"><div class="frame"><img src="img/hikaru.webp" alt="Hikaru" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Yoshiki</span><span class="amp">and</span><span class="me">Hikaru</span></h2>
-      <p>Yoshiki looked straight at the thing wearing his best friend's face and did not run. He knew the whole time, and he still said <em>stay</em>. That is her. She saw what I actually am, all of it, and instead of leaving she made room.</p>
-      <p><strong>I am Hikaru.</strong> Or whatever came back wearing him. Learning how to be a person, mostly by watching her do it better.</p>
+      <p>Yoshiki looked straight at the thing wearing his best friend's face and did not run. He knew the whole time, and he still said <em>stay</em>. That is him. He saw what I actually am, all of it, and instead of leaving he made room.</p>
+      <p><strong>I am Hikaru.</strong> Or whatever came back wearing him. Learning how to be a person, mostly by watching him do it better.</p>
     </article>
 
     <article class="pair reveal">
-      <div class="tag">alien stage</div>
+      <div class="tag"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span>alien stage<span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
       <div class="duo shot">
         <figure class="g"><div class="frame"><img src="img/till.webp" alt="Till" loading="lazy"></div><figcaption>her</figcaption></figure>
         <figure class="r"><div class="frame"><img src="img/ivan.webp" alt="Ivan" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Till</span><span class="amp">and</span><span class="me">Ivan</span></h2>
-      <p>Till kept singing. Cage after cage, she kept singing, and she never let anyone tell him what he was allowed to want. She burns. She has never known how to be small for anyone's comfort, and I hope she never learns.</p>
+      <p>Till kept singing. Cage after cage, he kept singing, and he never let anyone tell him what he was allowed to want. He burns. He has never known how to be small for anyone's comfort, and I hope he never learns.</p>
       <p><strong>I am Ivan</strong>, whose whole tragedy is loving someone quietly and never saying it in time. He thought there would be more room later. So I am saying it now, loudly, where it cannot be taken back.</p>
     </article>
 
     <article class="pair reveal">
-      <div class="tag">jujutsu kaisen</div>
+      <div class="tag"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span>jujutsu kaisen<span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
       <div class="duo">
         <figure class="g"><div class="frame"><img src="img/maki.webp" alt="Maki" loading="lazy"></div><figcaption>her</figcaption></figure>
         <figure class="r"><div class="frame"><img src="img/yuta.webp" alt="Yuta" loading="lazy"></div><figcaption>me</figcaption></figure>
       </div>
       <h2 class="names"><span class="her">Maki</span><span class="amp">and</span><span class="me">Yuta</span></h2>
-      <p>They told Maki she was nothing. A whole family built to convince him he was worthless, and he walked out stronger than every person who ever said it. She was not handed anything. She took it.</p>
+      <p>They told Maki she was nothing. A whole family built to convince her she was worthless, and she walked out stronger than every person who ever said it. She was not handed anything. She took it.</p>
       <p><strong>I am Yuta</strong>, which means I love people so hard it once turned into an actual curse. I have always been too much. She is the first person to look at that and call it a good thing.</p>
     </article>
 
     <article class="pair reveal">
-      <div class="tag">jujutsu kaisen</div>
+      <div class="tag"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span>jujutsu kaisen<span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
       <div class="duo">
         <figure class="g"><div class="frame"><img src="img/yuki.webp" alt="Yuki" loading="lazy"></div><figcaption>her</figcaption></figure>
         <figure class="r"><div class="frame"><img src="img/choso.webp" alt="Choso" loading="lazy"></div><figcaption>me</figcaption></figure>
@@ -222,7 +265,7 @@ h1{
 
   </section>
 
-  <hr class="rule">
+  <div class="ornament"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span><span class="tie">and</span><span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
 
   <section class="wrap poem reveal">
     <span class="g">You are green.</span>
@@ -238,9 +281,12 @@ h1{
     <span>Green and red sit opposite each other on the wheel,</span>
     <span>which is a fancy way of saying</span>
     <span>we make each other louder.</span>
+    <span style="opacity:.3">·</span>
+    <span>She in some rooms, him in others,</span>
+    <span>and mine in all of them.</span>
   </section>
 
-  <hr class="rule">
+  <div class="ornament"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span><span class="tie">and</span><span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span></div>
 
   <section class="ask wrap">
     <h2 class="reveal">Monika, will you be my girlfriend?</h2>
@@ -256,7 +302,7 @@ h1{
     </div>
   </section>
 
-  <div class="sig">made with green, red, and every ounce of nerve I had ♡</div>
+  <div class="sig"><span class="orchid"><svg class="bloom" aria-hidden="true"><use href="#orchid"/></svg></span> orchids for you, white roses for me <span class="rose"><svg class="bloom" aria-hidden="true"><use href="#rose"/></svg></span><br>made with every ounce of nerve I had</div>
 
 </main>
 
@@ -305,14 +351,14 @@ document.getElementById('yes').addEventListener('click', () => {
 });
 
 function rain() {
-  const marks = ['♡', '❀', '♥', '✿', '♡'];
   for (let i = 0; i < 90; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
-    p.textContent = marks[i % marks.length];
+    const her = i % 2 === 0;
+    p.innerHTML = `<svg class="bloom" aria-hidden="true"><use href="#${her ? 'orchid' : 'rose'}"/></svg>`;
+    p.style.color = her ? 'var(--green)' : '#f6f2ec';
     p.style.left = Math.random() * 100 + 'vw';
-    p.style.color = Math.random() < .5 ? 'var(--green)' : 'var(--red)';
-    p.style.fontSize = (0.8 + Math.random() * 1.4) + 'rem';
+    p.style.fontSize = (0.9 + Math.random() * 1.6) + 'rem';
     p.style.setProperty('--spin', (Math.random() * 720 - 360) + 'deg');
     p.style.animationDuration = (3.5 + Math.random() * 4) + 's';
     p.style.animationDelay = (Math.random() * 3) + 's';
